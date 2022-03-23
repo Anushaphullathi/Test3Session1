@@ -16,7 +16,8 @@ int find_gcd(int a,int b)
   return a;
 }
 int input_n()
-{
+{ 
+  int n;
   printf("enter no.of fractions\n");
   scanf("%d",&n);
   return n;

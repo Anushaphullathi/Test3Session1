@@ -1,1 +1,103 @@
 
+ 
+ gcc -g p3original.c
+ ./a.out
+Enter the value of n and r 2
+4
+2 4 is 32764 gdb ./a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ./a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x8ea: file p3original.c, line 24.
+(gdb) r
+Starting program: /home/runner/Test3Session1/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p3original.c:24
+24  {
+(gdb) n
+26    a=input_n_and_r(&n,&r);
+(gdb) s
+input_n_and_r (n=0x7ffee88159e4, r=0x7ffee88159e8) at p3original.c:4
+4     printf("Enter the value of n and r");
+(gdb) n
+5     scanf("%d %d",n,r);
+(gdb) n
+Enter the value of n and r 2 4
+6   }
+(gdb) n
+main () at p3original.c:27
+27    b=ncr(n,r);
+(gdb) s
+ncr (n=2, r=4) at p3original.c:8
+8   {
+(gdb) n
+9    int i,factn=1,factr=1,fact[n-r];
+(gdb) n
+10   for(i=1;i<=n;i++)
+(gdb) n
+11   factn=factn*i;
+(gdb) n
+10   for(i=1;i<=n;i++)
+(gdb) n
+11   factn=factn*i;
+(gdb) n
+10   for(i=1;i<=n;i++)
+(gdb) n
+12   for(i=1;i<=r;i++)
+(gdb) n
+13   factr=factr*i;
+(gdb) n
+12   for(i=1;i<=r;i++)
+(gdb) n
+13   factr=factr*i;
+(gdb) n
+12   for(i=1;i<=r;i++)
+(gdb) n
+13   factr=factr*i;
+(gdb) n
+12   for(i=1;i<=r;i++)
+(gdb) n
+13   factr=factr*i;
+(gdb) n
+12   for(i=1;i<=r;i++)
+(gdb) n
+14   for(i=1;i<=(n-r);i++)
+(gdb) n
+16   int result=(factn/fact[n-r]*factr);
+(gdb) n
+17   return result;
+(gdb) n
+18  }
+(gdb) n
+main () at p3original.c:28
+28    output(n,r,result);
+(gdb) s
+output (n=2, r=4, result=32766) at p3original.c:21
+21    printf("%d %d is %d",n,r,result);
+(gdb) n
+22  }
+(gdb) n
+main () at p3original.c:29
+29    return 0;
+(gdb) n
+30  }
+(gdb) q
+A debugging session is active.
+
+    Inferior 1 [process 662] will be killed.
+
+Quit anyway? (y or n) y

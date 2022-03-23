@@ -1,20 +1,20 @@
 #include<stdio.h>
-int input_n_and_r(int *n, int *r)
+void input_n_and_r(int *n, int *r)
 {
-  printf("Enter the value of n and r");
+  printf("Enter the value of n and r\n");
   scanf("%d %d",n,r);
+}
+int factorial(int n)
+{
+  int fact=1;
+  for(int i=2;i<=n;i++)
+    fact=fact*i;
+  return fact;
 }
 int ncr(int n, int r)
 {
- int i,factn=1,factr=1,fact[n-r];
- for(i=1;i<=n;i++)
- factn=factn*i;
- for(i=1;i<=r;i++)
- factr=factr*i;
- for(i=1;i<=(n-r);i++)
- fact[n-r]=fact[n-r]*i;
- int result=(factn/fact[n-r]*factr);
- return result;
+ int result=factorial(n)/factorial(r)*factorial(n-r);
+  return result;
 }
 void output(int n, int r, int result)
 {
@@ -22,10 +22,11 @@ void output(int n, int r, int result)
 }
 int main()
 {
-  int n,r,result,a,b;
-  a=input_n_and_r(&n,&r);
-  b=ncr(n,r);
+  int n,r,result;
+  input_n_and_r(&n,&r);
+  result=ncr(n,r);
   output(n,r,result);
   return 0;
 }
+
 

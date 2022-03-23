@@ -7,13 +7,19 @@ typedef  struct _fraction Fraction;
 int find_gcd(int a, int b)
 {
   int t;
-  while(b!=0)
+  while(a!=b)
   {
-    t=b;
-    b=a%b;
-    a=t;
+   if(a>b)
+   {
+     a=a-b;
+     return a;
+   }
+    else
+   {
+     b=b-a;
+     return b;
+   }   
   }
-  return a;
 }
 Fraction input_fraction()
 {

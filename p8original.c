@@ -4,16 +4,22 @@ struct _fraction
 int num,den;
 };
 typedef struct _fraction Fraction;
-int find_gcd(int a,int b)
+int find_gcd(int a, int b)
 {
   int t;
-  while(b!=0)
-    {
-      t=b;
-      b=a%b;
-      a=t;
-    }
-  return a;
+  while(a!=b)
+  {
+   if(a>b)
+   {
+     a=a-b;
+     return a;
+   }
+    else
+   {
+     b=b-a;
+     return b;
+   }   
+  }
 }
 int input_n()
 { 

@@ -6,10 +6,10 @@ void input_n_and_r(int *n, int *r)
 }
 int factorial(int n)
 {
-  int fact=1;
+  int facto=1;
   for(int i=2;i<=n;i++)
-    fact=fact*i;
-  return fact;
+    facto=facto*i;
+  return facto;
 }
 int ncr(int n, int r)
 {

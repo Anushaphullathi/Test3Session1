@@ -45,6 +45,7 @@ int main()
   x=input_x();
   input_coefficients(n,a);
   c=evaluate_polynomial(n,a,x);
+  printf("hence the output is \n");
   out_put(n,a[n],x,c);
   return 0;
 }

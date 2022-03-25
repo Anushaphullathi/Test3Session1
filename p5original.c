@@ -16,11 +16,11 @@ void input_array(int n, int a[n])
 }
 int find_largest(int n, int a[n])
 {
-   int max=a[0],k=0;
+   int maxm=a[0],k=0;
   for(int i=1;i<n;i++)
     {
-      if(max<a[i]){
-        max=a[i];
+      if(maxm<a[i]){
+        maxm=a[i];
         k=i;
         }
     }
@@ -35,8 +35,8 @@ void out_put(int n, int a[n], int largest)
   int n=input_size();
   int a[n];
   input_array(n,a);
-  int max=find_largest(n,a);
-  out_put(n,a,max);
+  int maxm=find_largest(n,a);
+  out_put(n,a,maxm);
   return 0;
 }
 

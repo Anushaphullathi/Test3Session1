@@ -45,10 +45,10 @@ void output(Fraction f1, Fraction f2, Fraction sum)
 }
 int main()
 {
-  Fraction f1,f2,sum;
+  Fraction f1,f2,sumfr;
   f1=input_fraction();
   f2=input_fraction();
-  sum=add_fractions(f1,f2);
-  output(f1,f2,sum);
+  sumfr=add_fractions(f1,f2);
+  output(f1,f2,sumfr);
   return 0;
 }
